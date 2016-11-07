@@ -1,0 +1,5 @@
+<view class="content">
+  <view class="title">{{title}}</view>
+  <image src="{{image}}" mode="aspectFill"></image>
+  <view class="body">{{body}}</view>
+</view>

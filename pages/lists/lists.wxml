@@ -1,0 +1,9 @@
+<view class="content">
+	<view class="descrp">{{description}}</view>
+  <view class="title">{{title}}</view>
+  <image class="bg_img" src="{{image}}" mode="aspectFill"></image>
+  <view class="lists" wx:for="{{lists}}">
+  	<view>{{item.title}}</view>
+  	<image src="{{item.images[0]}}"></image>
+  </view>
+</view>

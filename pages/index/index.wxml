@@ -1,0 +1,50 @@
+<scroll-view class="content" lower-threshold="60" bindscrolltolower="refresh" scroll-y="true">
+
+  <loading hidden="{{showLoading}}">
+    加载中...
+  </loading>
+
+  <toast hidden="{{tipsHidden}}" duration="500" bindchange="hide">
+    更新成功
+  </toast>
+
+  <modal title="分享" confirm-text="确定" cancel-text="残忍拒绝"
+         hidden="{{modalHidden}}"
+         bindconfirm="modalConfirm"
+         bindcancel="modalCancel">
+    文章的标题和图片
+  </modal>
+
+  <action-sheet hidden="{{actionHide}}" bindchange="hideAction">
+    <block wx:for="{{['阅读','分享']}}">
+      <action-sheet-item class="item" bindtap="action" data-name="{{item}}">{{item}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+  </action-sheet>
+
+
+  <swiper class="swiper" autoplay="true" interval="3000" indicator-dots="true">
+    <swiper-item bindtap="show" data-id="{{item.id}}"
+                 style="background-image:url({{item.image}});background-size:cover"
+                 wx:for="{{imgs}}">
+      <view class="title">{{item.title}}</view>
+    </swiper-item>
+  </swiper>
+
+
+  <view wx:for="{{news}}" class="list-item" bindtap="showAction" data-id="{{item.id}}">
+    <view class="content-title">{{item.title}}</view>
+    <view style="background-image:url({{item.images[0]}});background-size:cover" class="content-image"></view>
+  </view>
+
+
+  <view class="list_left" animation="{{moveRight}}">
+      <view wx:for="{{lists}}" class="block" bindtap="listsAction" data-id="{{item.id}}">{{item.name}}</view>
+  </view> 
+
+  <view class="list_cir" style="background-image:url('{{imgUrl}}');background-size:contain;" bindtap="listShow">
+
+  </view>
+</scroll-view>
+
+  

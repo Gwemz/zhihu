@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/about/about",
+    "pages/show/show",
+    "pages/lists/lists"
+  ],
+  "window": {
+    "navigationBarTitleText": "知乎日报",
+    "backgroundColor": "#000000",
+    "backgroundTextStyle": "light"
+  },
+  "networkTimeout": {
+    "request": 10000
+  }
+}
